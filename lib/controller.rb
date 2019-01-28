@@ -8,11 +8,7 @@ class ApplicationController < Sinatra::Base
     erb :index, locals: {gossips: Gossip.all}
   end
 
-  # get '/gossips/new/:id' do
-  #   Gossip.all.select do |gossip|
-  #     gossip.id == params[:id]
-  #   end.first
-  # end
+
 
   get '/gossips/new/' do
     erb :new_gossip
@@ -22,6 +18,5 @@ class ApplicationController < Sinatra::Base
     Gossip.new(params["gossip_author"],params["gossip_content"]).save 
     redirect '/'
   end
-  
-    
+      
 end

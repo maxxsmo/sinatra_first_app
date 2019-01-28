@@ -1,15 +1,13 @@
 
 class Gossip
 
-  attr_accessor :author, :content, :id
+  attr_accessor :author, :content
 
 
   def initialize (author, content)
     @author = author
-    @content = content  
+    @content = content 
   end
-
-  
 
 
   def save
@@ -20,8 +18,8 @@ class Gossip
 
   def self.all
     all_gossips = []
-    CSV.read("./db/gossip.csv").each do |i|
-      all_gossips << Gossip.new(i[0], i[1])
+    CSV.read("./db/gossip.csv").each do |csv_line|
+      all_gossips << Gossip.new(csv_line[0], csv_line[1])
     end
     return all_gossips
   end
@@ -29,7 +27,7 @@ class Gossip
 
 end
 
-p user1 = Gossip.new("s", "grgerg")
-p user2 = Gossip.new("zrjgrklgjlre", "a")
-p user3 = Gossip.new("zrjgrklgjlre", "a")
-p user4 = Gossip.new("zrjgrklgjlre", "a")
+# p user1 = Gossip.new("s", "grgerg")
+# p user2 = Gossip.new("zrjgrklgjlre", "a")
+# p user3 = Gossip.new("zrjgrklgjlre", "a")
+# p user4 = Gossip.new("zrjgrklgjlre", "a")
