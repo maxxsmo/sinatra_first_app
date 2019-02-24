@@ -11,8 +11,8 @@
     <h2> Voici les gossips : </h2>
     <% gossips.each do |gossip| %>
       <p>
-        <%= gossip.author %><br/>
-        <%= gossip.content %>
+        <a href="gossips/<%=gossip.id%>">Potin <%=gossip.id%></a></br>
+        
       </p>
     <% end %>
   </body>
